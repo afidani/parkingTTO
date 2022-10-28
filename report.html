@@ -17,7 +17,27 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
     />
+
+    <script>
+let completeDate = new Date("2022-10-28");
+let yearMonth = new Date("2021-01");
+
+
+function setcontent(){
+
+  document.getElementById('date').innerHTML =document.getElementById('dateForm').value;
+  document.getElementById('expire').innerHTML =document.getElementById('expireForm').value;
+  document.getElementById('time').innerHTML =document.getElementById('timeForm').value;
+
+  document.getElementById('expire2').innerHTML =document.getElementById('expireForm').value;
+  document.getElementById('time2').innerHTML =document.getElementById('timeForm').value;
+}
+
+    </script>
     <style>
+
+
+
       @page {
         /*este es el margen cuando va a la impresora*/
         margin: 20mm;
@@ -113,7 +133,10 @@
         body.A5 {
           width: 148mm;
         }
-
+        .no-print, .no-print *
+    {
+        display: none !important;
+    }
         /** Padding area . como puse margen en la PAGE que afecta a la impresion le saco el padding **/
         /*padding-top:2cm;
 		   padding-bottom:2cm;*/
@@ -123,77 +146,6 @@
         }
       }
 
-      .bajada {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 13pt;
-        color: #4b5d7f;
-        font-weight: bold;
-        line-height: 1.3;
-      }
-
-      .texto-chico {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 8.5pt;
-        color: #666666;
-        line-height: 1.4;
-      }
-
-      .titulo1 {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: bold;
-        font-size: 21pt;
-        color: #4fbbbf;
-        line-height: 1.2;
-      }
-
-      .bajadaRegular {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 13pt;
-        color: #666666;
-        font-weight: normal;
-        line-height: 1.3;
-      }
-
-      .subtitulo {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 11pt;
-        color: #4b5d7f;
-        font-weight: bold;
-        line-height: 1.3;
-
-        border-bottom: 1px solid #4b5d7f;
-        padding-bottom: 5px;
-      }
-
-      .textobase {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 11pt;
-        color: #666666;
-        font-weight: normal;
-        line-height: 1.3;
-      }
-
-      .textochico {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 10pt;
-        color: #666666;
-        font-weight: normal;
-        line-height: 1.4;
-      }
-
-      .white {
-        color: #ffffff;
-      }
-      .bold {
-        font-weight: bold;
-      }
-      .morado {
-        color: #4b5d7f;
-      }
-      .texto-parrafo {
-        text-align: left;
-        white-space: pre-wrap;
-      }
     </style>
 
     <style>
@@ -216,45 +168,95 @@
   </head>
 
   <body class="A4">
-    <div class="divFooter textochico" style="left: 40%; margin: 0 auto"></div>
 
-    <section class="sheet padding-20mm">
-      <div class="paperfront">
-        <div class="frontblue" id="header">PLACE ON DASH FACE UP</div>
-        <div class="printed area">
-        </div>
+    <form method="post" class="no-print" >
+      Entry: <input type="text" id="dateForm" value="24 OCT 22 20:36"/>
+      Expire: <input type="text" id="expireForm" value="25 OCT"/>
+      TIME: <input type="text" id="timeForm" value="18:00"/>
+      <input type="button" onclick="javascript:setcontent()" />
+  
+    </form>
 
-      </div>
-    </section >
+
       <section class="sheet padding-20mm">
       <div class="front">
-        <div class="frontblue" >PLACE ON DASH FACE UP</div>
-        <div class="normal">TargetPark 15 Brant St HST848626321RT0001 EXPIRES</div>
-        <div class="mainfront">25 OCT 22 18:00</div>
-        <div class="">ENTRY TIME 24 OCT 22 20:36 26856 470455******7489</div>
-        <div class="">PAID Cnd $ 30.00C</div>
-        <div class="frontblue">PLACE ON DASH FACE UP</div>
+        <br>
+        <div class="frontblue" >UP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACE ON DASH FACE UP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACE ON DASH FACE UP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACE ON DASH FACE UP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACE ON DASH FACE UP</div>
+        <DIV class="printedarea">
+          <div class="">TargetPark <br>15 Brant St <br>HST848626321RT0001 <br>EXPIRES</div>
+          <div class="mainfront"><span id="expire">25 OCT</span><br><span id="time">18:00</span></div>
+          <div class="">ENTRY TIME <span id="date">24 OCT 22 20:36</span><br>26856 470455******7489</div>
+          <div class="paid">
+              <div class="">22<br><br>PAID Cnd<br>$ 30.00</div>              
+          </div>
+          <div class="paid2">
+            <div class="">EXPIRES<br><br><span id="expire2">25 OCT</span> 22<br><span id="time2">18:00</span><br>PAID Cnd<br>$ 30.00C<br>RECEIPT</div>              
+        </div>
+        </DIV>
+        
+        <div class="frontblue" >U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACER SUR LE TABLEAU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACER SUR LE TABLEAU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACER SUR LE TABLEAU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PLACER SUR LE TABLEAU</div>
+        <div class="frontblue" >E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE BORD CE CÔTÉ VISIBLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE BORD CE CÔTÉ VISIBLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE BORD CE CÔTÉ VISIBLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE BORD CE CÔTÉ VISIBLE</div>
       </div>
     </section>
     <section class="sheet padding-20mm">
       <div class="back">
         <div class="backtext">
-          THE PARKING SPACE/LOT IS NO SUPERVISED: CHARGES ARE FOR USE OF PARKING
-          SPACE ONLY. THE COMPANY ASUMES NO RESPONSIBILITY WHATSOEVER FOR
-          SECURITY, LOSS OR DAMAGE DUE TO FIRE. THEFT. COLLISION OR OTHERWISE TO
-          THE VEHICLE OR ITS CONTENTS HOWEVER CAUSED. REMEMBER TO STORE YOUR
-          VALUABLES OUT OF SIGHT AND LOCK YOUR VEHICLE.
-        </div>
-
-        <div class="backtext">
-          LES ESPACES DE STATIONNEMENTS NE SONT PAS SURVEILLÉES. LES FRAIS
-          S'APPLIQUENT UNIQUE- MENT POUR L'UTILISATION DE L'ESPACE DE STA-
-          TIONNEMENT. LA COMPAGNIE N'ASSUME AUCUNE RESPONSABILITE. QUE CE SOIT
-          POUR LA SÉCURITÉ. LA PERTE OU LES DOMMAGES CAUSÉS PAR LES. INCENDIE
-          VOL. COLLISION OU TOUT AUTRES AU VÉHICULE ET A SON CONTENU PRENEZ SOIN
-          DE BIEN REMISER VOS OBJETS DE VALEUR HORS DE LA VUE. AINSI QUE DE BIEN
+          THE COMPANY ASUMES NO RESPONSIBILITY 
+          WHATSOEVER FOR SECURITY, LOSS OR DAMAGE 
+          DUE TO FIRE. THEFT. COLLISION OR OTHERWISE TO
+          THE VEHICLE OR ITS CONTENTS HOWEVER 
+          CAUSED. REMEMBER TO STORE YOUR VALUABLES 
+          OUT OF SIGHT AND LOCK YOUR VEHICLE.
+          <br>
+          <br>
+          <br>
+          <br>
+          LES ESPACES DE STATIONNEMENTS NE SONT PAS 
+          SURVEILLÉES. LES FRAIS S'APPLIQUENT UNIQUE- 
+          MENT POUR L'UTILISATION DE L'ESPACE DE STA-
+          TIONNEMENT. LA COMPAGNIE N'ASSUME AUCUNE 
+          RESPONSABILITE. QUE CE SOIT POUR LA 
+          SÉCURITÉ. LA PERTE OU LES DOMMAGES CAUSÉS 
+          PAR LES. INCENDIE VOL. COLLISION OU TOUT 
+          AUTRES AU VÉHICULE ET A SON CONTENU.
+          PRENEZ SOIN DE BIEN REMISER VOS OBJETS DE 
+          VALEUR HORS DE LA VUE. AINSI QUE DE BIEN
+          VERROUILLÉ VOTRE VÉHICULE
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          THE PARKING SPACE/LOT IS NO SUPERVISED; 
+          CHARGES ARE FOR USE OF PARKING SPACE ONLY. 
+          THE COMPANY ASUMES NO RESPONSIBILITY 
+          WHATSOEVER FOR SECURITY, LOSS OR DAMAGE 
+          DUE TO FIRE. THEFT. COLLISION OR OTHERWISE TO
+          THE VEHICLE OR ITS CONTENTS HOWEVER 
+          CAUSED. REMEMBER TO STORE YOUR VALUABLES 
+          OUT OF SIGHT AND LOCK YOUR VEHICLE.
+          <br>
+          <br>
+          <br>
+          <br>
+          LES ESPACES DE STATIONNEMENTS NE SONT PAS 
+          SURVEILLÉES. LES FRAIS S'APPLIQUENT UNIQUE- 
+          MENT POUR L'UTILISATION DE L'ESPACE DE STA-
+          TIONNEMENT. LA COMPAGNIE N'ASSUME AUCUNE 
+          RESPONSABILITE. QUE CE SOIT POUR LA 
+          SÉCURITÉ. LA PERTE OU LES DOMMAGES CAUSÉS 
+          PAR LES. INCENDIE VOL. COLLISION OU TOUT 
+          AUTRES AU VÉHICULE ET A SON CONTENU.
+          PRENEZ SOIN DE BIEN REMISER VOS OBJETS DE 
+          VALEUR HORS DE LA VUE. AINSI QUE DE BIEN
           VERROUILLÉ VOTRE VÉHICULE
         </div>
+
+        
       </div>
     </section>
   </body>
